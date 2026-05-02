@@ -1,0 +1,738 @@
+{
+  "generated_at": "2026-05-01T23:00:06.293242",
+  "months": [
+    {
+      "year": 2026,
+      "month": 5,
+      "days": {
+        "2": "family",
+        "3": "family",
+        "5": "ishir",
+        "6": "ishir",
+        "7": "ishir",
+        "8": "ishir",
+        "9": "ishir",
+        "10": "ishir",
+        "11": "ishir",
+        "12": "duyen",
+        "13": "duyen",
+        "14": "duyen",
+        "15": "duyen",
+        "18": "ishir",
+        "19": "ishir",
+        "20": "ishir",
+        "21": "ishir",
+        "22": "ishir",
+        "26": "duyen",
+        "27": "duyen",
+        "28": "duyen",
+        "29": "duyen",
+        "30": "duyen",
+        "31": "duyen"
+      },
+      "details": {
+        "2": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "New York trip"
+          }
+        ],
+        "3": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "New York trip"
+          }
+        ],
+        "5": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192LHR \u2022 VS 4012"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "6": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192LHR \u2022 VS 4012"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 LHR\u2192BLR \u2022 VS 316"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "7": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BLR\u2192GOX \u2022 VS 8396"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "8": [
+          {
+            "person": "Ishir",
+            "kind": "stay",
+            "text": "Staying in GOX \u2022 VS 8396"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "9": [
+          {
+            "person": "Ishir",
+            "kind": "stay",
+            "text": "Staying in GOX \u2022 VS 8396"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "10": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 GOX\u2192BOM \u2022 VS 9097"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOM\u2192LHR \u2022 VS 359"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "11": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOM\u2192LHR \u2022 VS 359"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 LHR\u2192BOS \u2022 VS 11"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Goa India Investigator Meeting Travel"
+          }
+        ],
+        "12": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192SFO \u2022 DL 1655"
+          }
+        ],
+        "13": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in SFO \u2022 DL 1655"
+          }
+        ],
+        "14": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in SFO \u2022 DL 1655"
+          }
+        ],
+        "15": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 SFO\u2192BOS \u2022 DL 1655"
+          }
+        ],
+        "18": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192AMS \u2022 AF 3615"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "EMEA Investigator Meeting Travel"
+          }
+        ],
+        "19": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 AMS\u2192KRK \u2022 AF 3139"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "EMEA Investigator Meeting Travel"
+          }
+        ],
+        "20": [
+          {
+            "person": "Ishir",
+            "kind": "stay",
+            "text": "Staying in KRK \u2022 AF 3139"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "EMEA Investigator Meeting Travel"
+          }
+        ],
+        "21": [
+          {
+            "person": "Ishir",
+            "kind": "stay",
+            "text": "Staying in KRK \u2022 AF 3139"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "EMEA Investigator Meeting Travel"
+          }
+        ],
+        "22": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 KRK\u2192AMS \u2022 DL 9592"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 AMS\u2192BOS \u2022 DL 243"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "EMEA Investigator Meeting Travel"
+          }
+        ],
+        "26": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192ORD \u2022 AA 1592"
+          }
+        ],
+        "27": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in ORD \u2022 AA 1592"
+          }
+        ],
+        "28": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192ORD \u2022 AA 1553"
+          },
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192ORD \u2022 AA 1610"
+          }
+        ],
+        "29": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in ORD \u2022 AA 1610"
+          }
+        ],
+        "30": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in ORD \u2022 AA 1610"
+          }
+        ],
+        "31": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in ORD \u2022 AA 1610"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "days": {
+        "1": "duyen",
+        "2": "duyen",
+        "8": "ishir",
+        "9": "ishir",
+        "10": "ishir",
+        "11": "ishir",
+        "12": "ishir",
+        "15": "duyen",
+        "16": "both",
+        "17": "both",
+        "18": "both",
+        "19": "duyen",
+        "29": "family",
+        "30": "family"
+      },
+      "details": {
+        "1": [
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in ORD \u2022 AA 1610"
+          }
+        ],
+        "2": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 ORD\u2192BOS \u2022 AA 1610"
+          }
+        ],
+        "8": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192JFK \u2022 DL 5814"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 JFK\u2192GRU \u2022 DL 6052"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Rio Investigator Meeting Travel"
+          }
+        ],
+        "9": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 JFK\u2192GRU \u2022 DL 6052"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Rio Investigator Meeting Travel"
+          }
+        ],
+        "10": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 CGH\u2192GIG \u2022 G3 1448"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Rio Investigator Meeting Travel"
+          }
+        ],
+        "11": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 GIG\u2192GRU \u2022 DL 6141"
+          },
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 GRU\u2192BOS \u2022 DL 6054"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Rio Investigator Meeting Travel"
+          }
+        ],
+        "12": [
+          {
+            "person": "Ishir",
+            "kind": "flight",
+            "text": "\u2708 GRU\u2192BOS \u2022 DL 6054"
+          },
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Rio Investigator Meeting Travel"
+          }
+        ],
+        "15": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192CPH \u2022 SK 928"
+          },
+          {
+            "person": "Duyen",
+            "kind": "trip",
+            "text": "Trip ESMOGYN"
+          }
+        ],
+        "16": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "London Roche Trip"
+          },
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 BOS\u2192CPH \u2022 SK 928"
+          },
+          {
+            "person": "Duyen",
+            "kind": "trip",
+            "text": "Trip ESMOGYN"
+          }
+        ],
+        "17": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "London Roche Trip"
+          },
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in CPH \u2022 SK 928"
+          },
+          {
+            "person": "Duyen",
+            "kind": "trip",
+            "text": "Trip ESMOGYN"
+          }
+        ],
+        "18": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "London Roche Trip"
+          },
+          {
+            "person": "Duyen",
+            "kind": "stay",
+            "text": "Staying in CPH \u2022 SK 928"
+          },
+          {
+            "person": "Duyen",
+            "kind": "trip",
+            "text": "Trip ESMOGYN"
+          }
+        ],
+        "19": [
+          {
+            "person": "Duyen",
+            "kind": "flight",
+            "text": "\u2708 CPH\u2192BOS \u2022 SK 927"
+          },
+          {
+            "person": "Duyen",
+            "kind": "trip",
+            "text": "Trip ESMOGYN"
+          }
+        ],
+        "29": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ],
+        "30": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "days": {
+        "1": "family",
+        "2": "family",
+        "3": "family",
+        "4": "family",
+        "5": "family"
+      },
+      "details": {
+        "1": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ],
+        "2": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ],
+        "3": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ],
+        "4": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ],
+        "5": [
+          {
+            "person": "Family",
+            "kind": "trip",
+            "text": "POTENTIAL VACATION"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "days": {
+        "26": "ishir",
+        "27": "ishir",
+        "28": "ishir",
+        "29": "ishir",
+        "30": "ishir",
+        "31": "ishir"
+      },
+      "details": {
+        "26": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ],
+        "27": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ],
+        "28": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ],
+        "29": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ],
+        "30": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ],
+        "31": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "European Society of Cardiology Munich Travel"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "month": 9,
+      "days": {
+        "9": "ishir",
+        "10": "ishir",
+        "11": "ishir",
+        "12": "ishir",
+        "13": "ishir",
+        "23": "ishir",
+        "24": "ishir",
+        "25": "ishir",
+        "26": "ishir"
+      },
+      "details": {
+        "9": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "China Investigator Meeting Travel"
+          }
+        ],
+        "10": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "China Investigator Meeting Travel"
+          }
+        ],
+        "11": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "China Investigator Meeting Travel"
+          }
+        ],
+        "12": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "China Investigator Meeting Travel"
+          }
+        ],
+        "13": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "China Investigator Meeting Travel"
+          }
+        ],
+        "23": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Mexico City Investigator Meeting Travel"
+          }
+        ],
+        "24": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Mexico City Investigator Meeting Travel"
+          }
+        ],
+        "25": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Mexico City Investigator Meeting Travel"
+          }
+        ],
+        "26": [
+          {
+            "person": "Ishir",
+            "kind": "trip",
+            "text": "Mexico City Investigator Meeting Travel"
+          }
+        ]
+      }
+    },
+    {
+      "year": 2026,
+      "month": 10,
+      "days": {},
+      "details": {}
+    }
+  ],
+  "legend": {
+    "none": "Home",
+    "ishir": "Ishir away",
+    "duyen": "Duyen away",
+    "family": "Family away",
+    "both": "Multiple away"
+  },
+  "ranges": {
+    "ishir": [
+      [
+        "2026-05-05",
+        "2026-05-11"
+      ],
+      [
+        "2026-05-18",
+        "2026-05-22"
+      ],
+      [
+        "2026-06-08",
+        "2026-06-12"
+      ],
+      [
+        "2026-06-16",
+        "2026-06-18"
+      ],
+      [
+        "2026-08-26",
+        "2026-08-31"
+      ],
+      [
+        "2026-09-09",
+        "2026-09-13"
+      ],
+      [
+        "2026-09-23",
+        "2026-09-26"
+      ]
+    ],
+    "duyen": [
+      [
+        "2026-05-12",
+        "2026-05-15"
+      ],
+      [
+        "2026-05-26",
+        "2026-06-02"
+      ],
+      [
+        "2026-06-15",
+        "2026-06-19"
+      ]
+    ],
+    "family": [
+      [
+        "2026-05-02",
+        "2026-05-03"
+      ],
+      [
+        "2026-06-29",
+        "2026-07-05"
+      ]
+    ]
+  }
+}

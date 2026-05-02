@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel Away Dashboard</title>
+  <link rel="stylesheet" href="./styles.css?v=20260419a" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Travel Dashboard</p>
+        <h1>Away From Home</h1>
+        <p class="muted">Next 6 months from the Ishir and Duyen calendars. BOS is treated as home.</p>
+      </div>
+      <div class="pill-wrap">
+        <div id="updated-at" class="pill">Loading…</div>
+        <div class="pill small">UI v20260419a</div>
+        <a href="#" id="refresh-link" class="refresh-link">Refresh</a>
+      </div>
+    </header>
+
+    <section class="card legend-card">
+      <div class="legend">
+        <div><span class="swatch none"></span> Home</div>
+        <div><span class="swatch ishir"></span> Ishir away</div>
+        <div><span class="swatch duyen"></span> Duyen away</div>
+        <div><span class="swatch both"></span> Both away</div>
+        <div><span class="swatch family"></span> Family away</div>
+      </div>
+    </section>
+
+    <section id="months-grid" class="months-grid"></section>
+    <div id="day-tooltip" class="day-tooltip" hidden></div>
+  </div>
+
+  <script src="./app.js?v=20260419a"></script>
+</body>
+</html>
