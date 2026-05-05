@@ -58,7 +58,7 @@ function renderTooltipItems(items) {
 
 function buildMonth(month, today) {
   const first = new Date(month.year, month.month - 1, 1);
-  const startWeekday = (first.getDay() + 6) % 7;
+  const startWeekday = first.getDay();
   const daysInMonth = new Date(month.year, month.month, 0).getDate();
   const cells = [];
 
@@ -82,7 +82,7 @@ function buildMonth(month, today) {
     <section class="month-card">
       <div class="month-header">${monthName(month.year, month.month)}</div>
       <div class="weekdays">
-        <div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div><div>Sun</div>
+        <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
       </div>
       <div class="days-grid">${cells.join('')}</div>
     </section>
