@@ -125,6 +125,12 @@ def to_local_naive(dt):
     return dt
 
 
+def to_event_datetime(dt):
+    if isinstance(dt, date) and not isinstance(dt, datetime):
+        return datetime(dt.year, dt.month, dt.day)
+    return dt
+
+
 def to_local_tz(dt, airport_code):
     if not isinstance(dt, datetime):
         return None
@@ -171,8 +177,8 @@ def fetch_events():
             dtstart = component.decoded('dtstart')
             dtend = component.decoded('dtend') if component.get('dtend') else dtstart
             is_all_day = isinstance(dtstart, date) and not isinstance(dtstart, datetime)
-            start = to_local_naive(dtstart)
-            end = to_local_naive(dtend)
+            start = to_event_datetime(dtstart)
+            end = to_event_datetime(dtend)
             events[cal_name].append({
                 'summary': summary,
                 'start': start,
