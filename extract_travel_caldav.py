@@ -10,6 +10,7 @@ import caldav
 BASE = Path('/Users/bolo/.openclaw/workspace/travel-dashboard')
 OUT = BASE / 'data.json'
 CREDS = Path('/Users/bolo/.openclaw/workspace/CREDENTIALS.md')
+AIRPORT_TZ_DATA = BASE / 'data' / 'airport_timezones.json'
 ICLOUD_URL = 'https://caldav.icloud.com'
 MONTHS_AHEAD = 6
 
@@ -19,7 +20,7 @@ CALENDARS = {
     'Family': {'home': 'BOS', 'key': 'family'},
 }
 
-AIRPORT_TIMEZONES = {
+FALLBACK_AIRPORT_TIMEZONES = {
     'AMS': 'Europe/Amsterdam',
     'ATL': 'America/New_York',
     'BLR': 'Asia/Kolkata',
@@ -39,6 +40,20 @@ AIRPORT_TIMEZONES = {
     'SFO': 'America/Los_Angeles',
     'SJU': 'America/Puerto_Rico',
 }
+
+
+def load_airport_timezones():
+    if AIRPORT_TZ_DATA.exists():
+        try:
+            data = json.loads(AIRPORT_TZ_DATA.read_text())
+            if isinstance(data, dict):
+                return {str(k).upper(): str(v) for k, v in data.items()}
+        except Exception:
+            pass
+    return FALLBACK_AIRPORT_TIMEZONES.copy()
+
+
+AIRPORT_TIMEZONES = load_airport_timezones()
 
 
 def extract_field(block: str, names):

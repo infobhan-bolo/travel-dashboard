@@ -1,0 +1,20 @@
+{
+  "AMS": "Europe/Amsterdam",
+  "ATL": "America/New_York",
+  "BLR": "Asia/Kolkata",
+  "BOM": "Asia/Kolkata",
+  "BOS": "America/New_York",
+  "DFW": "America/Chicago",
+  "GIG": "America/Sao_Paulo",
+  "GOX": "Asia/Kolkata",
+  "GRU": "America/Sao_Paulo",
+  "ICN": "Asia/Seoul",
+  "JFK": "America/New_York",
+  "JNB": "Africa/Johannesburg",
+  "KRK": "Europe/Warsaw",
+  "LHR": "Europe/London",
+  "MSP": "America/Chicago",
+  "ORD": "America/Chicago",
+  "SFO": "America/Los_Angeles",
+  "SJU": "America/Puerto_Rico"
+}
