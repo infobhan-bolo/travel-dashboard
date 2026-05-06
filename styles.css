@@ -80,6 +80,14 @@ h1 { margin:0 0 8px; font-size: clamp(32px,5vw,52px); }
 .day-tooltip-line + .day-tooltip-line {
   margin-top: 4px;
 }
+.day-tooltip-subline {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  color: var(--muted);
+  font-size: 12px;
+}
 .day-tooltip-line.kind-stay .day-tooltip-text,
 .day-tooltip-line.kind-flight .day-tooltip-text {
   color: #8df0cf;

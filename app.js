@@ -42,6 +42,10 @@ function renderTooltipItems(items) {
     groups.get(person).push({
       kind: item.kind || 'trip',
       text: cleanTooltipText(item.text || ''),
+      departure_time: item.departure_time || null,
+      arrival_time: item.arrival_time || null,
+      origin: item.origin || null,
+      dest: item.dest || null,
     });
   }
   return [...groups.entries()].map(([person, personItems]) => `
@@ -50,6 +54,12 @@ function renderTooltipItems(items) {
       ${personItems.map(item => `
         <div class="day-tooltip-line kind-${esc(item.kind)}">
           <span class="day-tooltip-text">${esc(item.text)}</span>
+          ${item.kind === 'flight' && (item.departure_time || item.arrival_time) ? `
+            <div class="day-tooltip-subline">
+              ${item.departure_time ? `<span>Dep: ${esc(item.departure_time)}${item.origin ? ` (${esc(item.origin)})` : ''}</span>` : ''}
+              ${item.arrival_time ? `<span>Arr: ${esc(item.arrival_time)}${item.dest ? ` (${esc(item.dest)})` : ''}</span>` : ''}
+            </div>
+          ` : ''}
         </div>
       `).join('')}
     </div>

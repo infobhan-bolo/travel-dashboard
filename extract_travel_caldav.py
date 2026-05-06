@@ -3,6 +3,7 @@ import json
 import re
 from datetime import date, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import caldav
 
@@ -16,6 +17,24 @@ CALENDARS = {
     'Ishir': {'home': 'BOS', 'key': 'ishir'},
     'Duyen': {'home': 'BOS', 'key': 'duyen'},
     'Family': {'home': 'BOS', 'key': 'family'},
+}
+
+AIRPORT_TIMEZONES = {
+    'AMS': 'Europe/Amsterdam',
+    'ATL': 'America/New_York',
+    'BLR': 'Asia/Kolkata',
+    'BOM': 'Asia/Kolkata',
+    'BOS': 'America/New_York',
+    'DFW': 'America/Chicago',
+    'GOX': 'Asia/Kolkata',
+    'ICN': 'Asia/Seoul',
+    'JNB': 'Africa/Johannesburg',
+    'KRK': 'Europe/Warsaw',
+    'LHR': 'Europe/London',
+    'MSP': 'America/Chicago',
+    'ORD': 'America/Chicago',
+    'SFO': 'America/Los_Angeles',
+    'SJU': 'America/Puerto_Rico',
 }
 
 
@@ -77,8 +96,10 @@ def destination_label(summary: str, dest_code: str):
     return dest_code
 
 
-def detail_record(kind: str, text: str):
-    return {'kind': kind, 'text': text}
+def detail_record(kind: str, text: str, **extra):
+    rec = {'kind': kind, 'text': text}
+    rec.update(extra)
+    return rec
 
 
 def merge_ranges(ranges):
@@ -102,6 +123,26 @@ def to_local_naive(dt):
     if dt.tzinfo is not None:
         return dt.astimezone().replace(tzinfo=None)
     return dt
+
+
+def to_local_tz(dt, airport_code):
+    if not isinstance(dt, datetime):
+        return None
+    tz_name = AIRPORT_TIMEZONES.get(airport_code)
+    if not tz_name:
+        return dt
+    zone = ZoneInfo(tz_name)
+    if dt.tzinfo is not None:
+        return dt.astimezone(zone)
+    return dt.replace(tzinfo=zone)
+
+
+def format_flight_time(dt, airport_code):
+    local_dt = to_local_tz(dt, airport_code)
+    if local_dt is None:
+        return None
+    tz_label = local_dt.tzname() or AIRPORT_TIMEZONES.get(airport_code, '')
+    return f"{local_dt.strftime('%-I:%M %p')} {tz_label}" if tz_label else local_dt.strftime('%-I:%M %p')
 
 
 def fetch_events():
@@ -203,10 +244,10 @@ def away_info(events, home='BOS'):
     ranges = []
     details = {}
 
-    def add_detail(day, kind, text):
+    def add_detail(day, kind, text, **extra):
         key = day.isoformat()
         details.setdefault(key, [])
-        record = detail_record(kind, text)
+        record = detail_record(kind, text, **extra)
         if record not in details[key]:
             details[key].append(record)
 
@@ -217,7 +258,15 @@ def away_info(events, home='BOS'):
             matching_flights = [f for f in block['flights'] if f['start_day'] <= cur <= f['end_day']]
             if matching_flights:
                 for flight in matching_flights:
-                    add_detail(cur, 'flight', flight['summary'])
+                    add_detail(
+                        cur,
+                        'flight',
+                        flight['summary'],
+                        departure_time=format_flight_time(flight['start'], flight['origin']),
+                        arrival_time=format_flight_time(flight['end'], flight['dest']),
+                        origin=flight['origin'],
+                        dest=flight['dest'],
+                    )
             else:
                 previous = [f for f in block['flights'] if f['start_day'] <= cur]
                 if previous:
