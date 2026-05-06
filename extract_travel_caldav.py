@@ -151,6 +151,13 @@ def format_flight_time(dt, airport_code):
     return f"{local_dt.strftime('%-I:%M %p')} {tz_label}" if tz_label else local_dt.strftime('%-I:%M %p')
 
 
+def day_offset_for_display(reference_day, dt, airport_code):
+    local_dt = to_local_tz(dt, airport_code)
+    if local_dt is None:
+        return 0
+    return (local_dt.date() - reference_day).days
+
+
 def fetch_events():
     username, password = get_icloud_credentials()
     client = caldav.DAVClient(url=ICLOUD_URL, username=username, password=password)
@@ -278,6 +285,8 @@ def away_info(events, home='BOS'):
                         flight['summary'],
                         departure_time=format_flight_time(flight['start'], flight['origin']),
                         arrival_time=format_flight_time(flight['end'], flight['dest']),
+                        departure_day_offset=day_offset_for_display(cur, flight['start'], flight['origin']),
+                        arrival_day_offset=day_offset_for_display(cur, flight['end'], flight['dest']),
                         origin=flight['origin'],
                         dest=flight['dest'],
                     )
@@ -334,7 +343,7 @@ def build_data():
                         'kind': detail['kind'],
                         'text': text,
                     }
-                    for extra_key in ('departure_time', 'arrival_time', 'origin', 'dest'):
+                    for extra_key in ('departure_time', 'arrival_time', 'departure_day_offset', 'arrival_day_offset', 'origin', 'dest'):
                         if detail.get(extra_key) is not None:
                             record[extra_key] = detail.get(extra_key)
                     marker = (record['person'], record['kind'], record['text'])

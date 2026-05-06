@@ -88,6 +88,12 @@ h1 { margin:0 0 8px; font-size: clamp(32px,5vw,52px); }
   color: var(--muted);
   font-size: 12px;
 }
+.day-offset {
+  margin-left: 1px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #8df0cf;
+}
 .day-tooltip-line.kind-stay .day-tooltip-text,
 .day-tooltip-line.kind-flight .day-tooltip-text {
   color: #8df0cf;

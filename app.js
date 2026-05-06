@@ -31,6 +31,11 @@ function cleanTooltipText(text) {
   return String(text).replace(/\s*•\s*[A-Z0-9]{2}\s+\d+\s*$/u, '').trim();
 }
 
+function formatDayOffset(offset) {
+  if (!offset) return '';
+  return `<sup class="day-offset">${offset > 0 ? `+${offset}` : offset}</sup>`;
+}
+
 function renderTooltipItems(items) {
   const groups = new Map();
   for (const rawItem of items) {
@@ -44,6 +49,8 @@ function renderTooltipItems(items) {
       text: cleanTooltipText(item.text || ''),
       departure_time: item.departure_time || null,
       arrival_time: item.arrival_time || null,
+      departure_day_offset: Number.isFinite(item.departure_day_offset) ? item.departure_day_offset : null,
+      arrival_day_offset: Number.isFinite(item.arrival_day_offset) ? item.arrival_day_offset : null,
       origin: item.origin || null,
       dest: item.dest || null,
     });
@@ -56,8 +63,8 @@ function renderTooltipItems(items) {
           <span class="day-tooltip-text">${esc(item.text)}</span>
           ${item.kind === 'flight' && (item.departure_time || item.arrival_time) ? `
             <div class="day-tooltip-subline">
-              ${item.departure_time ? `<span>Dep: ${esc(item.departure_time)}${item.origin ? ` (${esc(item.origin)})` : ''}</span>` : ''}
-              ${item.arrival_time ? `<span>Arr: ${esc(item.arrival_time)}${item.dest ? ` (${esc(item.dest)})` : ''}</span>` : ''}
+              ${item.departure_time ? `<span>Dep: ${esc(item.departure_time)}${formatDayOffset(item.departure_day_offset)}${item.origin ? ` (${esc(item.origin)})` : ''}</span>` : ''}
+              ${item.arrival_time ? `<span>Arr: ${esc(item.arrival_time)}${formatDayOffset(item.arrival_day_offset)}${item.dest ? ` (${esc(item.dest)})` : ''}</span>` : ''}
             </div>
           ` : ''}
         </div>
