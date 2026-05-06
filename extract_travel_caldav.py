@@ -196,6 +196,14 @@ def event_day_range(event):
     return start_day, end_day
 
 
+def flight_day_range(start_dt, end_dt, origin, dest):
+    start_local = to_local_tz(start_dt, origin)
+    end_local = to_local_tz(end_dt, dest)
+    start_day = start_local.date() if start_local else start_dt.date()
+    end_day = end_local.date() if end_local else end_dt.date()
+    return start_day, end_day
+
+
 def away_info(events, home='BOS'):
     flights = []
     trip_events = []
@@ -205,7 +213,7 @@ def away_info(events, home='BOS'):
             continue
         origin, dest = airport_codes(summary)
         if origin and dest:
-            start_day, end_day = event_day_range(event)
+            start_day, end_day = flight_day_range(event['start'], event['end'], origin, dest)
             flights.append({
                 'origin': origin,
                 'dest': dest,
