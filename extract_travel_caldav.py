@@ -26,8 +26,11 @@ AIRPORT_TIMEZONES = {
     'BOM': 'Asia/Kolkata',
     'BOS': 'America/New_York',
     'DFW': 'America/Chicago',
+    'GIG': 'America/Sao_Paulo',
     'GOX': 'Asia/Kolkata',
+    'GRU': 'America/Sao_Paulo',
     'ICN': 'Asia/Seoul',
+    'JFK': 'America/New_York',
     'JNB': 'Africa/Johannesburg',
     'KRK': 'Europe/Warsaw',
     'LHR': 'Europe/London',
@@ -143,11 +146,24 @@ def to_local_tz(dt, airport_code):
     return dt.replace(tzinfo=zone)
 
 
+def normalize_tz_label(label):
+    if not label:
+        return ''
+    m = re.fullmatch(r'([+-])(\d{2})(?::?(\d{2}))?', label)
+    if not m:
+        return label
+    sign, hours, minutes = m.groups()
+    hour_num = int(hours)
+    if minutes and minutes != '00':
+        return f"GMT{sign}{hour_num}:{minutes}"
+    return f"GMT{sign}{hour_num}"
+
+
 def format_flight_time(dt, airport_code):
     local_dt = to_local_tz(dt, airport_code)
     if local_dt is None:
         return None
-    tz_label = local_dt.tzname() or AIRPORT_TIMEZONES.get(airport_code, '')
+    tz_label = normalize_tz_label(local_dt.tzname() or AIRPORT_TIMEZONES.get(airport_code, ''))
     return f"{local_dt.strftime('%-I:%M %p')} {tz_label}" if tz_label else local_dt.strftime('%-I:%M %p')
 
 
