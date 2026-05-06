@@ -37,6 +37,7 @@ function formatDayOffset(offset) {
 }
 
 function renderTooltipItems(items) {
+  const kindOrder = { trip: 0, flight: 1, stay: 2 };
   const groups = new Map();
   for (const rawItem of items) {
     const item = (rawItem && typeof rawItem === 'object' && !Array.isArray(rawItem))
@@ -55,7 +56,9 @@ function renderTooltipItems(items) {
       dest: item.dest || null,
     });
   }
-  return [...groups.entries()].map(([person, personItems]) => `
+  return [...groups.entries()].map(([person, personItems]) => {
+    personItems.sort((a, b) => (kindOrder[a.kind] ?? 99) - (kindOrder[b.kind] ?? 99));
+    return `
     <div class="day-tooltip-group">
       <div class="day-tooltip-group-title">${esc(person)}</div>
       ${personItems.map(item => `
@@ -70,7 +73,8 @@ function renderTooltipItems(items) {
         </div>
       `).join('')}
     </div>
-  `).join('');
+  `;
+  }).join('');
 }
 
 function buildMonth(month, today) {
