@@ -149,44 +149,52 @@ function setupTooltips(tooltipMap) {
   if (!tooltip) return;
 
   let activeDay = null;
+  let pinnedDay = null;
 
-  const showForDay = (day) => {
+  const showForDay = (day, pinned = false) => {
     const html = tooltipMap.get(day.dataset.dayKey || '');
     if (!html) return;
     tooltip.innerHTML = html;
     tooltip.hidden = false;
     positionTooltip(day, tooltip);
     activeDay = day;
+    pinnedDay = pinned ? day : null;
   };
 
   const hide = () => {
     tooltip.hidden = true;
     activeDay = null;
+    pinnedDay = null;
   };
 
   document.querySelectorAll('.day[data-day-key]').forEach(day => {
-    const show = () => showForDay(day);
-    day.addEventListener('mouseenter', show);
+    day.addEventListener('mouseenter', () => showForDay(day, false));
     day.addEventListener('mouseleave', () => {
-      if (activeDay !== day) tooltip.hidden = true;
+      if (pinnedDay !== day) {
+        tooltip.hidden = true;
+        activeDay = null;
+      }
     });
-    day.addEventListener('focus', show);
+    day.addEventListener('focus', () => showForDay(day, false));
     day.addEventListener('blur', () => {
-      if (activeDay !== day) tooltip.hidden = true;
+      if (pinnedDay !== day) {
+        tooltip.hidden = true;
+        activeDay = null;
+      }
     });
     day.addEventListener('click', (event) => {
       event.stopPropagation();
-      if (activeDay === day && !tooltip.hidden) {
+      if (pinnedDay === day && !tooltip.hidden) {
         hide();
       } else {
-        showForDay(day);
+        showForDay(day, true);
       }
     });
   });
 
   document.addEventListener('click', (event) => {
     if (tooltip.hidden) return;
-    if (activeDay && activeDay.contains(event.target)) return;
+    if (pinnedDay && pinnedDay.contains(event.target)) return;
     hide();
   });
 
