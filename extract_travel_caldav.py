@@ -320,6 +320,9 @@ def build_data():
                         'kind': detail['kind'],
                         'text': text,
                     }
+                    for extra_key in ('departure_time', 'arrival_time', 'origin', 'dest'):
+                        if detail.get(extra_key) is not None:
+                            record[extra_key] = detail.get(extra_key)
                     marker = (record['person'], record['kind'], record['text'])
                     if marker in seen:
                         continue
